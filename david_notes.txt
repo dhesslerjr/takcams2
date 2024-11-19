@@ -1,0 +1,15 @@
+david flask notes
+========================
+
+
+CURL
+using curl on windows to post json to flask endpoint:
+
+curl localhost:5000/lvflow -d "{\"foo\": \"bar\"}" -H "Content-Type: application/json"
+
+
+FLASK syntax
+
+
+TEMPLATES
+
