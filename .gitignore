@@ -1,2 +1,4 @@
 ﻿myenv
 __pycache__
+.env
+go.bat

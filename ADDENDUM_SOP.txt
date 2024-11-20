@@ -1,0 +1,272 @@
+
+﻿Purpose 
+This Standard Operating Procedure (SOP) outlines the approved procedures to instruct personnel on the proper technique for various blood collection routes. 
+Personnel Qualifications/Responsibilities/Authority 
+The Manager of the Vivarium is responsible for the implementation, enforcing, and training of SOP material to all associated staff members.  
+All staff members associated with the vivarium operation are responsible for familiarizing themselves with this SOP prior to the execution of their duties. 
+Adherence to this SOP is required by Principal Investigators and trained personnel working with rodents.
+Equipment and Materials 
+• Proper PPE 
+• 1 ml syringes or Insulin syringes 
+• 27 – 30 gauge needles 
+• Restraint device
+• Alcohol pads/wipes 
+• Gauze
+• Incubator, heat lamp, or heating pad 
+Procedure 
+Acceptable Rodent Blood Collection Volumes:
+● Blood collections are not to exceed 10% of the circulating blood volume (CBV) over a two-week period.
+● This total 10% CBV may be taken as a single collection once every two weeks or may be collected over several time points (i.e. 5% of CBV weekly), so long as the total volume collected does not exceed 10% CBV during a two-week period.
+Body weight (g)
+Circulating Blood Volume (CPV)
+10% CBV (mL) every 2 weeks*
+20
+1.10 – 1.40
+0.11 - 0.14
+25
+1.37 – 1.75
+0.14 - 0.18
+30
+1.65 – 2.10
+0.17 - 0.21
+35
+1.93 – 2.45
+0.19 - 0.25
+*Max cumulative sample volume for that sampling frequency
+
+1. Submandibular facial vein
+● Appropriate PPE is to be worn for all procedures. At minimum, disposable lab coats, shoe covers, safety glasses and gloves must be worn.
+
+● Choose appropriately sized sterile Medipoint Goldenrod Lancet® or sterile hypodermic needle:
+
+Mouse
+Medipoint Goldenrod Lancet®
+Sterile hypodermic needle
+Under 2 months
+4mm
+25g 
+2-6 months
+5mm
+Up to 23g 
+Over 6 months
+-5.5mm
+Up to 23g
+1.3 Restrain the mouse by gripping the skin over the back of the neck so that the head cannot move, yet the mouse can breathe easily. Hold the animal upright to provide a good view of the cheek pouch.
+
+1.4 Locate the back curve of the bottom jaw (See Figure 1 and Figure 2).
+
+
+                                                           
+
+Figure 1 						Figure 2
+
+1.5 Quickly insert the lancet or sterile hypodermic needle into the bundle of vessels located at the back of the cheek pouch (See Figure 3), then quickly withdraw the lancet or needle.
+ 
+Figure 3 
+
+1.6 Once the blood begins to drip (virtually instantaneously), collect it in a small blood collection vial (See Figure 4). 
+
+
+
+Figure 4 
+1.7 Once blood is collected, apply pressure to the site of puncture with a clean gauze pad to stop any continuing blood from flowing, this may take 20- 30 seconds to ensure that bleeding is not still taking place subcutaneously, since this may not be readily visible. 
+
+1.8 Once bleeding has stopped, place the mouse back into its cage. Mice will typically self-groom to clean any remnant blood from the fur. 
+
+1.9 Check the mice 10- 15 minutes following the procedure to ensure normal behavior and recovery.
+● An additional blood sample can be collected by using the alternate cheek providing the maximum allowable blood volume is not exceeded. A minimum of 7 days rest is required to repeat sampling on the same cheek. If multiple samples are required over several time points (i.e. 0.5% of body weight weekly), then alternate blood collection routes should be used. 
+1.10 Record the date, type of collection, site and initials on the cage card or monitoring form.
+
+
+2. Lateral Tail Vein
+● Thermoregulation
+● The principal function of the tail veins is thermoregulation. Application of heat to the
+whole animal or locally to the tail can be used to cause vein dilation, which makes vascular access easier.
+● Exercise caution when applying heat. Use only approved heat sources. and monitor animals continuously while on or under the heat source.
+● The heat source should be placed such as to allow a gradient of temperature within the cage either by placement of the cage half on and half off a heating pad or the cage can be placed half under a heat lamp.
+● Approved heat sources include:
+o Warm water circulating pad, turn on the warming pad 20 minutes prior to use. Place the cage onto the warm pad for up to 30 minutes prior to injection.
+o Heat lamp. Only approved heat lamps with a maximum output of 250-watt bulbs may be used. Some lamps have an adjustable temperature. Other lamps have a fixed temperature, but the height of the bulb above the cage may be adjusted so that animals are never under direct heat. The heat lamp should be no lower than 12 inches above the bottom of the cage. Lids on cages should be removed while using heat lamps. Direct heat may compromise the integrity of the lid.
+o Warm water to warm the tail, optimally you should check the temperature which should never be more than 100F or about 38C (the temperature of a warm bath). Use the minimum temperature and time required to obtain results.
+● Note: Never leave animals unmonitored while on or under the heat source.
+2.2 Appropriate PPE is located at the facility entrance and is to be worn throughout the procedures. In addition, safety glasses must be worn.
+
+2.3 Restrain the mouse in an appropriate restrainer so that the tail is accessible (See Figure 2).
+
+
+Figure 2
+
+2.4 Locate the lateral vein and wipe the site with 70% ethanol then wipe with a dry gauze to remove moisture (See Figure 3).
+Note: Wiping with dry gauze is vital, this will allow the blood to pool at the site when the needle is removed allowing for capillary collection.
+
+Figure 3
+
+2.5 Insert into the vein midway down the tail. This allows for an additional attempt on a higher area if the initial attempt is unsuccessful. 
+
+2.6 Using a 25 gauge or smaller needle (28g recommended), with the bevel pointing up (See Figure 4), direct the tip of the needle into the vein just beyond the bevel then slowly remove the needle, a drop of blood will form (See Figure 5).
+
+                            
+Figure 4						Figure 5
+
+2.7 Collect the blood into the appropriate blood collection or micro capillary tube (See Figure 6).
+
+Figure 6
+
+2.8 Following sample collection apply pressure to the site with dry gauze until hemostasis has been achieved, this could take 10 to 30 seconds or longer.
+
+2.9 Return animals to their home cage once bleeding has stopped.
+Note: For repeated blood collections alternate vein puncture sites between collections. Repetitive bleeds may be performed by inserting the needle closer to the base of the tail.
+2.10 Record the date, type of collection, site and initials on the cage card or cage monitoring form.
+
+3. Retro-Orbital Venous Sinus (RO)
+● Due to risks of ocular damage, whenever possible alternative methods should be considered. 
+● Animals must be anesthetized.
+● This procedure is to be performed by or under the close supervision of experienced personnel. 
+● A minimum of 10 days should be allowed for tissue repair before repeat sampling from the same orbit. Otherwise, the healing process may interfere with blood flow. 
+● If an eye is damaged veterinary treatment must be administered to address potential pain and distress and no further procedures can be performed on that eye.
+● If both eyes sustain damage resulting in blindness the animal must be euthanized. 
+3.1 Appropriate PPE located at the facility entrance is to be worn throughout the procedures. In addition, safety glasses must be worn. 
+
+3.2 Anesthetize using an approved anesthetic (See SOP-00018). Adequate anesthesia is determined by lack of pedal reflex. 
+
+3.3 Place fully anesthetized animal in lateral recumbence.
+
+3.4 Gently apply pressure around eye until the globe protrudes slightly from the orbital cavity (See Figures 1 and 2). 
+
+3.5 With a gentle thrust and rotation (See Figure 2), insert the micro-hematocrit tube into the sinus membrane at the medial canthus. The eyeball itself remains untouched. As soon as the sinus is punctured, blood enters the tube by capillary action. 
+
+3.6 Remove the micro-hematocrit tube and release pressure to allow eyeball to situate itself back into the orbital cavity. 
+3.7 Using sterile gauze apply gentle pressure while holding eyelid shut for 5-10 seconds or until bleeding has stopped. 
+3.8 Return animals to holding cages and monitor until fully recovered from anesthesia. 
+3.9 Observe animals for adverse events, including continued bleeding from orbital cavity, if bleeding cannot be stopped or there is squinting, ocular discharge or other signs of pain or distress. If pain or distress is observed and it meets the criteria outlined animals must be euthanized as outlined in SOP-0007 Rodent Euthanasia. 
+
+
+4 Saphenous Vein Collection
+4.1 Appropriate PPE is to be worn for all procedures. At a minimum disposable lab coat, safety glasses, shoe covers, and gloves must be worn.
+4.2 Restrain the mouse by hand or use an appropriate restrainer. The animal is held in the restrainer headfirst so that only the rear legs and tail are free. The rear leg can be stretched out into a natural position. 
+4.3 Extend the hind leg by holding the fold of skin between the tail and thigh (See Figure 1). 
+
+
+4.4 Remove hair over tarsal area.
+
+4.5 Swab or wipe area with 70% ethanol (See  Figure 2) and let dry. 
+
+4.6 Apply a thin film of a neutral ointment such as Vaseline® or glycerin to the site to prevent blood from seeping into the fur and allow for blood drop formation. 
+
+4.7 With the hind leg still fixed and extended, use an appropriate gauge needle 25G or 26G or lancet to puncture the vein. When performed correctly, a drop of blood forms immediately at the puncture site (See Figure 3) 
+
+4.8 Place the tip of a collection tube such as a Microvette or hematocrit tube, at the puncture site so blood will flow freely into a collection tube. (See Figure 4).
+
+4.9 Following sample collection remove the tube and let the foot flex, to reduce the flow of blood and apply pressure to the site with clean dry gauze until hemostasis has been achieved, this could take 10 to 30 seconds or longer. 
+
+4.10 Once the bleeding has stopped, place the mouse back into its cage. Mice will typically self-groom to clean any remnant blood from the fur. 
+
+4.11 Check the mice for 10-15 minutes following the procedure to ensure bleeding has stopped and mice are behaving normally. 
+● Note: Multiple samples can be taken over several time points (i.e. 0.5% of body weight weekly), from the same site by removing the scab that forms over the puncture site; this can be done several times in a day providing the maximum allowable blood volume is not exceeded. 
+
+4.12 Record the date, type of collection, site and initials on the cage card or monitoring form. 
+
+5.Terminal Blood Collection: Cardiac Puncture.
+5.1 Appropriate PPE is to be worn throughout the procedures as posted at the facility entrance. In addition, safety glasses must be worn.
+
+5.2 Euthanize the animal using CO2 as described in SOP-0007 Rodent Euthanasia
+
+5.3 When breathing has stopped remove the animal from the chamber. 
+
+5.4 Place animal in dorsal recumbency. 
+
+5.5 To locate the area for injection, palpate the rib area cranially until the apex of the chest is reached. 1-2 cm posterior and dorsal to this position is the area of the heart (See Figure 1). 
+
+5.6 Insert the needle at this point and direct it into the heart.
+
+5.7 Aspirate to collect blood into the syringe until an adequate volume is obtained.
+
+5.8 Remove needle from chest cavity. 
+
+5.9 Ensure death using an approved method (e.g., cervical dislocation, exsanguination). 
+
+
+References:
+Guide for the Care and Use of Laboratory Animals; 8th Edition; Institute of Laboratory Animal Resources; U.S. Department of Health and Human Services;  National Institutes of Health Publication No 85-23, Revised 2011. 
+
+﻿
+Acceptable Methods of Euthanasia
+
+Purpose:
+Euthanasia is the act of inducing humane death in an animal with rapid unconsciousness and death with minimum pain, discomfort, or distress. The term euthanasia is derived from the Greek terms meaning “good death”. The term is used to describe ending the life of an individual animal in a way that minimizes or eliminates pain and distress. The purpose of this policy is to outline acceptable methods of euthanasia for laboratory animals at the INSTITUTION.
+
+Scope:
+This policy applies to all researchers and animal care staff at INSTITUTION who are performing euthanasia of animal subjects as part of an IACUC approved protocol. 
+
+1. Policy:
+1.1. The methods utilized to euthanize any animal on an IACUC-approved protocol must comply with the AVMA Guidelines for the Euthanasia of Animals: 2020 Edition.
+1.2. All individuals responsible for euthanasia of research animals must be qualified and trained to perform euthanasia humanely, per the IACUC training policy. As different euthanasia methods require different techniques, each euthanasia method requires a specific training.  The Researcher is responsible for ensuring appropriate documentation. Documentation of personnel training may be reviewed by the IACUC.
+1.3. Investigators will perform euthanasia following approved IACUC standard operating procedures.
+1.4. Methods not covered in approved IACUC standard operating procedures need to be approved by the IACUC. The Researcher should confer with the attending or clinical veterinarian prior to submitting the protocol to the IACUC for any such method. The IACUC must grant an exemption to any deviation from approved policies and procedures.
+1.5. The euthanasia method must be appropriate to the research goals, species and age of the animal, and approved in the animal study proposal.
+1.6. In this policy, we establish that, for the purposes of euthanasia, animals will be considered altricial until and including the age of 10 days after birth.
+1.7. The techniques should minimize stress and anxiety experienced by the animal prior to unconsciousness. Stress can be further minimized by technical proficiency and humane handling of the animals to be euthanized.
+
+2. IACUC Approved Acceptable Chemical Methods
+
+2.1. Pentobarbital and Phenytoin (Euthasol)
+2.1.1. Chemical euthanasia with an overdose of intravenous pentobarbital is the preferred euthanasia method for mammals with practical vascular access (e.g., rabbits).
+2.1.2. Intraperitoneal pentobarbital is acceptable for smaller mammals when intravenous access is not practical.
+2.1.3. Pentobarbital-based euthanasia solution (Euthasol: 390mg Pentobarbital/50mg Phenytoin /ml) can be used for immediate euthanasia.
+
+2.2. Carbon Dioxide (CO2) Inhalation
+2.2.1. Compressed CO2 gas in cylinders is the only allowable source of carbon dioxide because the inflow to the chamber can be regulated precisely. CO2 delivery must be monitored to ensure CO2 does not displace air by more or less than 30-70% of the chamber volume per minute. Prefilled CO2 chambers must not be used.
+2.2.2. CO2 generated by other methods (e.g., dry ice) is unacceptable.
+2.2.3. To ensure compliance with the AVMA CO2 guidelines; the use of the Euthanex Smartbox Automated Euthanasia chambers is recommended. See the Euthanasia of Rodents SOP.
+2.2.4. Euthanasia must be confirmed by a secondary method (see below). 
+2.2.5. CO2 is NOT an appropriate method of euthanasia for neonates under 10 days of age. 
+2.3.  Isoflurane Inhalation Overdose
+2.3.1. The required method of delivering isoflurane is via precision vaporizer..
+2.3.2. Euthanasia must be confirmed; a secondary method of euthanasia is required (see below).
+
+3. IACUC Approved Acceptable Physical Methods
+Physical methods of euthanasia can be used as secondary methods of euthanasia or, following careful training and assessment, as a primary method. Personnel using physical methods of euthanasia must be well trained and monitored for each type of physical method performed to ensure euthanasia is conducted appropriately.
+3.1. Cervical Dislocation
+3.1.1. When properly performed by trained personnel, manual cervical dislocation is a humane technique for euthanasia of mice, other small rodents, and rats weighing less than 200 grams.
+3.1.2. This should only be used as a secondary method until proficiency is demonstrated.
+3.2. Decapitation
+3.2.1. Decapitation is the preferred method for altricial neonates.
+3.2.2. Decapitation when performed properly is virtually instantaneous and is considered humane. This method must be justified by the experimental design and approved by the IACUC.
+3.2.3. Decapitation without pre‐sedation is acceptable for fetal and altricial mice and rats.
+3.2.4. Unless excised, fetuses inside a pregnant dam euthanized via CO2 do not need to be decapitated, per AVMA guidelines.
+3.2.5. Guillotines that are designed for decapitation of rodents are commercially available. It is critical to follow manufacturer guidelines to ensure equipment used is appropriate for the size of animals being euthanized. The equipment used to perform decapitation must be maintained in good working order and serviced on a regular basis to ensure sharpness of blades.
+3.2.6. Sharp scissors may be used for smaller animals, such as neonates and mice given that the scissors are large and sturdy enough to ensure that decapitation occurs rapidly and in one swift motion.
+3.2.7. The action should be smooth with no perceptible binding or resistance, and the blade must be rust-free, sharp, and decapitate with minimal force. The IACUC recommends the following technique to assess the sharpness of the blade: the blade is sharp enough that it will cut a thick rubber band, without dragging it between the blades and sticking.
+3.2.8. After use, the entire guillotine or surgical scissors must be rinsed with water and scrubbed to remove gross contamination. The unit(s) should then be thoroughly disinfected.
+3.2.9. The frequency of guillotine and/or surgical scissor sharpening will depend on the animal species involved and volume of use, however, a minimum of every 12 months is required. Alternatively, surgical scissors for decapitation could be replaced every 12 months.
+3.2.10. All laboratories using a guillotine or surgical scissors for decapitation must maintain a log to record dates of use and sharpening.
+3.3. Exsanguination
+3.3.1. With an animal under deep anesthesia, withdrawing the maximal volume of blood via cardiac puncture, abdominal aorta puncture, or bilateral transection of the cervical vasculature.
+4. Confirmation of Euthanasia	
+4.1. For all euthanasia methods, verification of complete euthanasia is required by veterinary, technical, and investigative staff. Use the following methods to confirm death of the animal:
+● Secondary methods: cervical dislocation, decapitation, or removal of major organs, or exsanguination secondary to CO2 euthanasia.
+● Visual inspection to assure no signs of respiration.
+● Ensure that the heart is not beating by feeling the chest between your thumb and forefinger.
+● Ensure that there is no blink reflex by touching the eyeball.
+● If there is a heartbeat or blink reflex, repeat the euthanasia process as described above.
+5. Responsibilities:	
+5.1. All individuals to whom this policy applies are responsible for becoming familiar with and following this policy. Researchers are responsible for promoting the understanding of this policy and for taking appropriate steps to help ensure compliance with it.
+6. Review of Policy:
+6.1. This policy will be periodically reviewed and updated to ensure alignment with evolving ethical standards, best practices, and institutional and regulatory requirements.
+
+
+
+
+
+
+When performing a submandibular facial vein blood collection from an 8-week-old mouse, it's essential to choose a needle size that minimizes discomfort and trauma to the animal while ensuring a successful blood collection.
+
+Although our Standard Operating Procedures (SOPs) do not specifically address this question, general laboratory practices and scientific principles can guide our decision.
+
+For blood collection from small animals like mice, a 25- or 26-gauge needle is commonly used. However, for an 8-week-old mouse, a smaller gauge needle may be more suitable to minimize discomfort and trauma.
+
+A 27- or 28-gauge needle (0.4-0.5 mm in diameter) is often recommended for blood collection from small rodents, including mice. This smaller gauge needle will help reduce the risk of vessel damage and promote a more successful blood collection.
+
+Before proceeding, I recommend verifying this information with a supervisor or referring to official documentation specific to your institution's animal care and use protocols. It's also crucial to ensure that you are trained and experienced in performing submandibular facial vein blood collection in mice to minimize animal stress and ensure a successful procedure.
+
+Additionally, please note that the use of a needle with a bevel (angled cut) can help reduce tissue damage and facilitate easier insertion into the vein. It's also essential to follow proper aseptic technique and handle the animal gently to minimize stress and ensure a successful blood collection.
