@@ -351,7 +351,7 @@ def main():
                 st.write(f"- {file.name}")
 
         #extra_databases = st.text_area("Enter additional documents by file path (one per line)", help="Optional")
-       # extra_databases file uploader
+        #extra_databases file uploader
         extra_databases = st.file_uploader("Upload extra database document(s)", type=['txt', 'pdf'], accept_multiple_files=True)
 
 
