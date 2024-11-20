@@ -1,0 +1,10 @@
+Provide responses in outline format, citing the reference for each answer.
+
+The responses are for a scientist familiar with the topics, so technical terminoligy is OK.
+
+Distinguish between process, material, and equipment topics.
+
+Display the responses within the context of the relevant portion of the primary procedure.
+
+
+

@@ -1,0 +1,9 @@
+The procedure for making a 1M TRIS buffer solution at pH 7.2 is as follows:
+
+1.	Prepare 0.8 liters of distilled water in a suitable container.
+2.	Add 121.14 grams of Tris base to the solution.
+3.	Adjust solution to desired pH using HCl (typically pH ≈ 7.2).
+4.	Q.S. with distilled water until the volume is 1 liters.
+
+The batch quantity of this TRIS buffer can be scaled up or down by multiplying all quantities by the desired final volume in liters.
+

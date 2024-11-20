@@ -1,0 +1,22 @@
+The intended use of a buffer dictates the purity of a solvent and the grade of other ingredients. 
+There are three basic buffer quality levels:
+ - Bench Grade buffers are prepared using distilled or deionized water or another ACS grade solvent, and the other ingredients are usually also reagent rade or ACS grade.
+ - Analytical Grade buffers use sterile, deionized water or an analytical grade solvent, and analyticial grade other ingredients.
+ - GMP Grade buffers use only approved and non-expired GMP-released ingredients including water and other solvents. In this case lot numbers for all reagents used in the buffer making are required.
+
+When dissolving a solid such as TRIS base into a solvent such as deionized water, it is important to provide sufficient mechanical mixing and time. 
+Mixing time will vary depending on the temperature of the solution. 
+For example, a buffer mixed at 4 degrees Celsius will take 15 minutes to fully dissolve, but the same solution at room temperature of 25 degrees Celsius would take only about 5 minutes.
+
+Titration of pH (adjusting pH using an acid or base) involves slowly adding an acid like ACS grade 37% HCl or a base like 10M NaOH solution in a drop-wise fashion and measuring the changes in pH using a pH meter. 
+The titration is complete when sufficient acid or base has ben added to the buffer to achieve the desired pH.The type of electrode used with the pH meter will vart depending on the temperature of the buffer.
+
+Double-junction pH electrodes are used for solutions containing proteins, and for TRIS buffers. 
+A glass electrode should be used if the buffer temperature is create than 80 degrees Celsius, otherwise glass or epoxy electrodes are suitable.
+
+Q.S. (Quantum satis) means adding sufficient amount of an ingredient to meet a desired specififed quantity. For example, if a beaker contains 50 milliliters of water, and the procedure step says "Q.S. to 105 milliliters" the user would add 55 additional milliliters.
+
+A "suitable container" for buffer preparation has the following qualities:
+ - maximum container volume of at least 10% > the batch quantity to be made
+ - inert to the ingredients
+ - provides a mechanism for any required mechanical mixing
