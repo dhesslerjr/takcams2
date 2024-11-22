@@ -86,9 +86,9 @@ class TakCamsAI:
             responses=[{}]
             if len(self.contexts)>0:
                 for c in self.contexts:
-                    search_response=query_database(c,question)
+                    search_response=self.query_database(c,question)
                     if search_response:
-                        search_response.verified=verify_answer(search_response.question,search_response.answer)
+                        search_response.verified=self.verify_answer(search_response.question,search_response.answer)
                         responses.append(search_response)
             
             return responses
@@ -120,7 +120,7 @@ class TakCamsAI:
             Do not provide any explanation, just the verification status.
             """
 
-            response = client.chat.completions.create(
+            response = self.client.chat.completions.create(
                 model="llama-3.1-70b-versatile",
                 messages=[{"role": "user", "content": verification_prompt}],
                 temperature=0.0,
