@@ -152,9 +152,15 @@ def main():
                 i=i+1
                 #DEBUG
                 #st.write(a)
+                verified = "False"
+                if(a['verified']==True):
+                    verified='Verified'
+                else:
+                    verified='Unverified'
+                st.info("[" + str(i) + f"]  {a['ftype']} : {a['dbname']}  ({verified})\n\n {a['answer']} ")
+                #st.info("[" + str(i) + f"]  {a['ftype']} : {a['dbname']}  (verified= {str(a['verified'])})\n\n {a['answer']} ")
 
-                st.info(str(i) + f"| {a['ftype']} | {a['dbname']} | verified= {str(a['verified'])}\n\n {a['answer']} ")
-            st.info("responses end here")
+            st.info("[end of response]")
 
 if __name__ == "__main__":
     main()
