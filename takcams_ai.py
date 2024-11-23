@@ -1,17 +1,11 @@
-import os, random
+import os, random, json
 import groq
 import sys
 import re
 import tempfile
+import streamlit as st
 
 
-class SearchResponse:
-    def __init__(self,a_ftype,a_verified,a_dbname,a_question,a_answer):
-     ftype=a_ftype
-     verified=a_verified
-     dbname=a_dbname
-     question=a_question
-     answer=a_answer
 
 
 class TakCamsAI:
@@ -50,25 +44,29 @@ class TakCamsAI:
                       "Provide a brief assessment and suggest any necessary improvements:"
         }
 
-    def set_contexts(self,contexts_array):
-        self.contexts=contexts_array
+    def set_contexts(self,contexts_array):            
+        self.contexts=[]
+        for c in contexts_array:
+             self.contexts.append(c)
 
     
     def get_hint(self):
         return f"random hint " + str(random.random())
 
-    def query_database(self,database,question):
-        sr = SearchResponse(database.ftype,False,database.name,question,"no database.content")
+    def query_database(self,database,aquestion):
+
+        answer=""
         if database.content:
-                prompt = self.prompts["system"] + "\n" + self.prompts["query"].format(context=database.content, question=question)
+                prompt = self.prompts["system"] + "\n" + self.prompts["query"].format(context=database.content, question=aquestion)
+
                 response = self.client.chat.completions.create(
                     model="llama-3.1-70b-versatile",
                     messages=[{"role": "user", "content": prompt}],
                     temperature=0.0,
                     max_tokens=1000
                 )
-                sr.answer.response.choices[0].message.content.strip()
-        return sr
+                answer=response.choices[0].message.content.strip()
+        return answer
 
 
     def ask_question(self, question):
@@ -82,14 +80,15 @@ class TakCamsAI:
             Returns:
                 bool: True if an answer was found and verified, False otherwise.
             """
-
-            responses=[{}]
+            responses=[]
             if len(self.contexts)>0:
                 for c in self.contexts:
-                    search_response=self.query_database(c,question)
-                    if search_response:
-                        search_response.verified=self.verify_answer(search_response.question,search_response.answer)
-                        responses.append(search_response)
+
+                    an_answer=self.query_database(c,question)
+                    if(an_answer):   
+                        isverified=self.verify_answer(question,an_answer)
+                        obj={'ftype':c.ftype, 'dbname':c.name, 'answer':an_answer, 'verified':isverified}
+                        responses.append(obj)
             
             return responses
 

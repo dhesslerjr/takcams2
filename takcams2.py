@@ -37,7 +37,8 @@ class TextDatabase:
         self.ftype=ftype
         self.content = content
 
-        st.info(f"created database: {self.name} of type {self.ftype} with content {self.content}")
+        #DEBUG
+        #st.info(f"created database: {self.name} of type {self.ftype} with content {self.content}")
 
     def add_document(self, text):
         """
@@ -79,6 +80,7 @@ class ContextStore:
     
     def add_context(self,file,ftype):
             dbname=os.path.basename(file.name).replace('"','')
+            ftype=ftype
             content=file.read()
             self.contexts.append(TextDatabase(dbname,content,ftype))
 
@@ -95,7 +97,6 @@ def main():
     if 'ContextStore' not in st.session_state:
         st.session_state.ContextStore = ContextStore()
         st.session_state.databases_created = False
-        st.session_state.takcams = takcams_ai.TakCamsAI(groq_api_key)
 
     if not st.session_state.databases_created:
         st.header("Database Creation")
@@ -123,10 +124,17 @@ def main():
                 #if len(userprofile)>0:
                 #    st.session_state.ContextStore.add_context(userprofile,'profile')
 
+                #DEBUG
+                for c in st.session_state.ContextStore.contexts:
+                    st.info(f"database: {c.ftype} | {c.name}")
             else:
                 st.error("Please upload at least one pre-existing knowledge file.")
 
     if st.session_state.databases_created:
+        if 'takcams' not in st.session_state:
+            st.session_state.takcams = takcams_ai.TakCamsAI(groq_api_key)
+            st.session_state.takcams.set_contexts(st.session_state.ContextStore.contexts)
+
         st.header("Hints")
         st.info("Your free hint is " + st.session_state.takcams.get_hint())
         st.header("Ask Questions")
@@ -137,13 +145,15 @@ def main():
             st.stop()
         
         if question:
-            st.write(st.session_state.takcams.ask_question(question))
+            answers=st.session_state.takcams.ask_question(question)
 
-            #i=0
-            #for a in answers:
-                #i=i+1
-                #st.info(str(i) + "|" + answers[a].ftype + "|" + answers[a].dbname + "|verified=" + str(answers[a].verified))
+            i=0
+            for a in answers:
+                i=i+1
+                #DEBUG
                 #st.write(a)
+
+                st.info(str(i) + f"| {a['ftype']} | {a['dbname']} | verified= {str(a['verified'])}\n\n {a['answer']} ")
             st.info("responses end here")
 
 if __name__ == "__main__":
