@@ -1,6 +1,11 @@
 <!doctype html>
-<title>My Application</title>
-{% with messages = get_flashed_messages() %}
+<html>
+  <head>
+    <title>TaKCaMS (Flask)</title>
+  </head>
+<body>
+  <p><a href="{{url_for('upload')}}">Upload</a> | <a href="{{url_for('clear')}}">Clear</a> | <a href="{{url_for('index')}}">Query</a></p> 
+  {% with messages = get_flashed_messages() %}
   {% if messages %}
     <ul class=flashes>
     {% for message in messages %}
@@ -9,4 +14,7 @@
     </ul>
   {% endif %}
 {% endwith %}
-{% block body %}{% endblock %}
+{% block body %}
+{% endblock %}
+</body>
+</html>
