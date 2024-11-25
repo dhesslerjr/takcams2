@@ -49,12 +49,32 @@ class UserTip:
         self.conflict=(len(self.explanations)>0)
 		
 class SystemSuggestion:
-	def __init__(self,step_no,raw_ai_text):
-		self.for_step=step_no
-		self.raw=raw_ai_text
-		self.suggestion=""
-		self.references=[]
-		#parse AI raw content here
+    def __init__(self,step_no,raw_ai_text):
+        self.for_step=step_no
+        self.raw=raw_ai_text
+        self.suggestion=""
+        self.references=[]
+        #parse AI raw content here
+
+        #suggestion
+        lines=self.raw.splitlines()
+        doing_references=False
+        for aline in lines:
+            aline=aline.strip()
+            if(doing_references):
+                exp=restOfLineAfter('- ',aline)
+                if(exp):
+                    self.references.append(exp)
+                else:
+                     doing_references=False 
+            else:
+                suggest = restOfLineAfter('Suggestion: ',aline)
+                if(suggest):
+                    self.suggestion=suggest
+                if(aline.find('References:')>-1):
+                    doing_references=True
+
+
 
 class SystemAnswer:
     def __init__(self,step_no,raw_ai_text):
@@ -96,6 +116,10 @@ class TakcamsData_v1:
     def set_user_tip(self,raw_ai_tip):
         me = UserTip(self.user_input['current_step'],raw_ai_tip)
         self.ai_user_tip = me
+
+    def set_system_suggestion(self):
+        me = SystemSuggestion(self.user_input['current_step'],raw_suggestion_example)
+        self.ai_system_suggestion = me
 
 
     

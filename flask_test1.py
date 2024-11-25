@@ -89,7 +89,8 @@ def schema_test():
     test = takcams_schema.TakcamsData_v1([],'david','david@email.com')
     test.set_user_input(1,'some user tip','some user question')
     test.set_user_tip(takcams_schema.raw_tip_example)
-    
+    test.set_system_suggestion()
+
     return '<pre>' + takcams_schema.toJSON(test) + '</pre>'
 
 
