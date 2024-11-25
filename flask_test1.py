@@ -1,24 +1,27 @@
 from flask import Flask,render_template,request,jsonify
-import os
+import os,json
 from flask_wtf import FlaskForm
-from wtforms import MultipleFileField,FileField
+from wtforms import MultipleFileField,FileField,TextAreaField
 from wtforms.validators import InputRequired
 from werkzeug.utils import secure_filename
 import takcams_ai
 import takcams_storage
 from dotenv import load_dotenv
 import config
+import takcams_schema
 
 app = Flask(__name__)
 app.config.from_object(config.Config)
 app.ContextStore = takcams_storage.ContextStore()
-
+app.session_log = []
 
 class UploadFileForm(FlaskForm):
     prefiles = MultipleFileField('Pre-existing',validators=[InputRequired()])
     guidelines = MultipleFileField('Guidelines',validators=[])
     userprofile = FileField('User profile',validators=[])
 
+class QueryForm(FlaskForm):
+    question = TextAreaField('Question',validators=[InputRequired()])
 
 @app.route('/clear',methods=["GET"])
 def clear():
@@ -66,9 +69,27 @@ def upload():
 
 
 @app.route('/',methods=["GET"])
-@app.route('/index',methods=["GET"])
+@app.route('/query',methods=["GET","POST"])
 def index():
 
+    question=""
+    answer=""
+    form = QueryForm()
+    if form.validate_on_submit():
+        question=form.question.data
+        #datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y")
+        app.session_log.append('Q:' + question)
+        answer="no answer yet!"
+        app.session_log.append('A:' + answer)
 
-    return render_template('index.html', contexts=app.ContextStore.contexts)
+    return render_template('index.html', form=form,contexts=len(app.ContextStore.contexts),question=question, answer=answer, log=app.session_log)
+
+@app.route('/schema_test',methods=["GET"])
+def schema_test():
+    test = takcams_schema.TakcamsData_v1([],'david','david@email.com')
+    test.set_user_input(1,'some user tip','some user question')
+    test.set_user_tip(takcams_schema.raw_tip_example)
+    
+    return '<pre>' + takcams_schema.toJSON(test) + '</pre>'
+
 

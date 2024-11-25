@@ -4,8 +4,33 @@
 
 <h1>TaKCaMS (Flask)</h1>
 
-{% if contexts|length %}
-    <p>FUTURE QUERY FORM HERE</p>
+{% if contexts %}
+    
+<form method=post enctype="multipart/form-data" action="{{url_for('index')}}">
+    <table>
+        {{ form.hidden_tag() }}
+        {% for field in form %}
+            {% if field.widget.input_type != 'hidden' %}
+            <tr>
+            <td> 
+                {{ field.label }} 
+                </td><td>{{ field }}</td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+    <p><input type=submit value='Submit'></form></p>
+    <p>
+        Question: {{question}}<br/>
+        Answer: {{answer}}<br/>
+    </p>
+    <hr/>
+    <p>
+        {% for l in log %}
+        {{l}}<br/>
+        {% endfor %}
+    </p>
+
 {% else %}
     <p>Upload at least one pre-existing knowledge document to begin.</p>
 {% endif %}
