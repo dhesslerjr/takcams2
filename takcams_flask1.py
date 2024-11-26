@@ -16,8 +16,8 @@ app.ContextStore = takcams_storage.ContextStore()
 app.session_log = []
 
 class UploadFileForm(FlaskForm):
-    prefiles = MultipleFileField('Pre-existing',validators=[InputRequired()])
-    guidelines = MultipleFileField('Guidelines',validators=[])
+    prefiles = FileField('Pre-existing',validators=[InputRequired()])
+    guidelines = FileField('Guidelines',validators=[])
     userprofile = FileField('User profile',validators=[])
 
 class QueryForm(FlaskForm):
@@ -41,22 +41,37 @@ def upload():
         #app.ContextStore.clear()
 
         #prefiles
-        pre_filenames = []
-        for afile in form.prefiles.data:
-            if(afile.filename):
-                app.ContextStore.add_context(afile,'pre-existing')
-                file_name = secure_filename(afile.filename)
-                afile.save(file_name)
-                pre_filenames.append(file_name)
-        
+        pre_filenames = []        
+        if 0: # if we allowed multiple files
+            for afile in form.prefiles.data:
+                if(afile.filename):
+                    app.ContextStore.add_context(afile,'pre-existing')
+                    file_name = secure_filename(afile.filename)
+                    afile.save(file_name)
+                    pre_filenames.append(file_name)
+        else:
+            pre = form.prefiles.data
+            if pre:
+                app.ContextStore.add_context(pre,'pre-existing')
+                pre_name = secure_filename(pre.filename)
+                pre_filenames.append(pre_name)
+
+
         #guidelines
         guideline_filenames = []
-        for file in form.guidelines.data:
-            if(file.filename):
-                app.ContextStore.add_context(file,'guideline')
-                file_name = secure_filename(file.filename)
-                file.save(file_name)
-                guideline_filenames.append(file_name)
+        if 0: # if we allowed multiple files
+            for file in form.guidelines.data:
+                if(file.filename):
+                    app.ContextStore.add_context(file,'guideline')
+                    file_name = secure_filename(file.filename)
+                    file.save(file_name)
+                    guideline_filenames.append(file_name)
+        else:
+            pre = form.guidelines.data
+            if pre:
+                app.ContextStore.add_context(pre,'guideline')
+                pre_name = secure_filename(pre.filename)
+                guideline_filenames.append(pre_name)
         
         #userprofile
         profile_name=''
