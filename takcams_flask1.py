@@ -1,5 +1,5 @@
 from flask import Flask,render_template,request,jsonify
-import os,json
+import os,json,datetime
 from flask_wtf import FlaskForm
 from wtforms import MultipleFileField,FileField,TextAreaField
 from wtforms.validators import InputRequired
@@ -23,11 +23,15 @@ class UploadFileForm(FlaskForm):
 class QueryForm(FlaskForm):
     question = TextAreaField('Question',validators=[InputRequired()])
 
-@app.route('/clear',methods=["GET"])
-def clear():
+@app.route('/clear_files',methods=["GET"])
+def clear_files():
     app.ContextStore.clear()
     return index()
 
+@app.route('/clear_log',methods=["GET"])
+def clear_log():
+    app.session_log=[]
+    return index()
 
 @app.route('/upload',methods=["GET","POST"])
 def upload():
@@ -65,7 +69,7 @@ def upload():
 
         return render_template('upload.html', form=form, contexts=app.ContextStore.contexts)        
 
-    return render_template('upload.html', form=form)
+    return render_template('upload.html', form=form,contexts=app.ContextStore.contexts)
 
 
 @app.route('/',methods=["GET"])
@@ -75,14 +79,21 @@ def index():
     question=""
     answer=""
     form = QueryForm()
+    alog=[]
     if form.validate_on_submit():
         question=form.question.data
-        #datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y")
-        app.session_log.append('Q:' + question)
-        answer="no answer yet!"
-        app.session_log.append('A:' + answer)
+        #datetime.datetime.now().strftime("%I:%M%p:%S on %B %d, %Y")
+        #DEBUG
+        answer='no answer available'
+        item = { 'when': datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y"),
+                'question': question, 'answer':answer}
+        app.session_log.append(item)
+        print(item)
+        alog= app.session_log.copy()
+        alog.reverse()
 
-    return render_template('index.html', form=form,contexts=len(app.ContextStore.contexts),question=question, answer=answer, log=app.session_log)
+
+    return render_template('index.html', form=form,contexts=len(app.ContextStore.contexts),question=question, answer=answer, log=alog)
 
 @app.route('/schema_test',methods=["GET"])
 def schema_test():

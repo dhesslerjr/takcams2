@@ -24,12 +24,17 @@
         Question: {{question}}<br/>
         Answer: {{answer}}<br/>
     </p>
+    {% if log %}
     <hr/>
-    <p>
+    <div class="container">
+    <ul>
         {% for l in log %}
-        {{l}}<br/>
+        <li>[{{l.when}}]<br/> 
+        Q:{{l.question}}<br/>
+        A:{{l.answer}}</li>
         {% endfor %}
-    </p>
+    </ul>
+    {% endif %}</div>
 
 {% else %}
     <p>Upload at least one pre-existing knowledge document to begin.</p>
