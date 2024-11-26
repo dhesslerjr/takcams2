@@ -90,6 +90,8 @@ def schema_test():
     test.set_user_input(1,'some user tip','some user question')
     test.set_user_tip(takcams_schema.raw_tip_example)
     test.set_system_suggestion()
+    test.set_answer(takcams_schema.raw_answer_example)
+
 
     return '<pre>' + takcams_schema.toJSON(test) + '</pre>'
 

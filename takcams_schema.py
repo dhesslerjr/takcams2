@@ -84,18 +84,62 @@ class SystemAnswer:
         self.confidence_score=0.0
         self.verified=False
         self.answer={
+            'answer': '-',
             'key_details': [],
             'technical_notes': [],
             'references': []
         }
 		#parse AI raw content here
 	
-    def toJSON(self):
-        return json.dumps(
-            self,
-            default=lambda o: o.__dict__, 
-            sort_keys=True,
-            indent=4)
+        #answer
+        my_answer=self.answer
+
+        lines=self.raw.splitlines()
+        doing_key_details=False
+        doing_technical_notes=False
+        doing_references=False
+
+        for aline in lines:
+            aline=aline.strip()
+            if(doing_key_details):
+                exp=restOfLineAfter('- ',aline)
+                if(exp):
+                    my_answer['key_details'].append(exp)
+                else:
+                     doing_key_details=False
+            elif(doing_technical_notes):
+                exp=restOfLineAfter('- ',aline)
+                if(exp):
+                    my_answer['technical_notes'].append(exp)
+                else:
+                     doing_technical_notes=False
+            elif(doing_references):
+                exp=restOfLineAfter('- ',aline)
+                if(exp):
+                    my_answer['references'].append(exp)
+                else:
+                     doing_references=False
+            
+            else:
+                an_answer = restOfLineAfter('Answer: ',aline)
+                if(an_answer):
+                    my_answer['answer']=an_answer
+                if(aline.find('Key Details: ')>-1):
+                    details=restOfLineAfter('Key Details: ',aline)
+                    if(details):
+                        my_answer['key_details'].append(details)
+                    doing_key_details=True
+                if(aline.find('Technical Notes: ')>-1):
+                    note=restOfLineAfter('Technical Notes: ',aline)
+                    if(note):
+                        my_answer['technical_notes'].append(note)
+                    doing_technical_notes=True
+                if(aline.find('References:')>-1):
+                    ref=restOfLineAfter('References: ',aline)
+                    if(ref):
+                        my_answer['references'].append(ref)
+                    doing_references=True
+
 
 class TakcamsData_v1:
 
@@ -121,6 +165,9 @@ class TakcamsData_v1:
         me = SystemSuggestion(self.user_input['current_step'],raw_suggestion_example)
         self.ai_system_suggestion = me
 
+    def set_answer(self,raw_ai_answer):
+        me = SystemAnswer(self.user_input['current_step'],raw_ai_answer)
+        self.ai_answer = me
 
     
 
