@@ -93,6 +93,6 @@ def schema_test():
     test.set_answer(takcams_schema.raw_answer_example)
 
 
-    return '<pre>' + takcams_schema.toJSON(test) + '</pre>'
+    return '<pre>' + takcams_schema.toJSON(test) + '</pre><pre>' + takcams_schema.toJSON(json.loads(takcams_schema.procedure_example_str)) + '</pre>'
 
 

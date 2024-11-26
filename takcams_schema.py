@@ -297,3 +297,62 @@ schema_full_example = '''
 	}
 }
 '''
+procedure_example_str = '''{ 
+	"title":  		"Prepare 2 molar TRIS buffer at pH 7",
+	"username": 		"David Hessler",
+	"email": 			"david.hessler@20visioneers15.com",
+	"batch_qty":		1.0,
+	"units":			"liters"
+	"procedure":		[
+							  { "Step":"1",
+								"Procedure":"Measure target amount\nof water into container",
+								"step_type":"ingredient",
+								"Target":"1.0",
+								"Actual":"",
+								"Units":"liters",
+								"Ingredient":"water",
+								"Equipment": "container",
+								"scale_target": False
+							  },
+							  { "Step":"2",
+								"Procedure":"Add target quantity \nof TRIS base",
+								"step_type":"ingredient",
+								"Target":"141",
+								"Actual":"",
+								"Units":"grams",
+								"Ingredient":"TRIS base",
+								"Equipment": "",
+								"scale_target": False
+							  },
+							  { "Step":"3",
+								"Procedure":"Adjust pH to 7.0 with HCl",
+								"step_type":"process",
+								"Target":"7.0",
+								"Actual":"",
+								"Units":"pH",
+								"Ingredient":"",
+								"Equipment": "pH meter",
+								"scale_target": False
+							  },
+							  { "Step":"4",
+								"Procedure":"Mix until fully dissolved",
+								"step_type":"process",
+								"Target":"5",
+								"Actual":"",
+								"Units":"minutes",
+								"Ingredient":"",
+								"Equipment": "mixer",
+								"scale_target": False
+							  },
+							  { "Step":"5",
+								"Procedure":"Q.S. to batch quantity \nwith water",
+								"step_type":"ingredient",
+								"Target":"1.0",
+								"Actual":"",
+								"Units":"liters",
+								"Ingredient":"water",
+								"Equipment": "",
+								"scale_target": True
+							  }		
+	]
+}'''
