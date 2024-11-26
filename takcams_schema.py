@@ -302,27 +302,27 @@ procedure_example_str = '''{
 	"username": 		"David Hessler",
 	"email": 			"david.hessler@20visioneers15.com",
 	"batch_qty":		1.0,
-	"units":			"liters"
+	"units":			"liters",
 	"procedure":		[
 							  { "Step":"1",
-								"Procedure":"Measure target amount\nof water into container",
+								"Procedure":"Measure target amount of water into container",
 								"step_type":"ingredient",
 								"Target":"1.0",
 								"Actual":"",
 								"Units":"liters",
 								"Ingredient":"water",
 								"Equipment": "container",
-								"scale_target": False
+								"scale_target": false
 							  },
 							  { "Step":"2",
-								"Procedure":"Add target quantity \nof TRIS base",
+								"Procedure":"Add target quantity of TRIS base",
 								"step_type":"ingredient",
 								"Target":"141",
 								"Actual":"",
 								"Units":"grams",
 								"Ingredient":"TRIS base",
 								"Equipment": "",
-								"scale_target": False
+								"scale_target": false
 							  },
 							  { "Step":"3",
 								"Procedure":"Adjust pH to 7.0 with HCl",
@@ -332,7 +332,7 @@ procedure_example_str = '''{
 								"Units":"pH",
 								"Ingredient":"",
 								"Equipment": "pH meter",
-								"scale_target": False
+								"scale_target": false
 							  },
 							  { "Step":"4",
 								"Procedure":"Mix until fully dissolved",
@@ -342,17 +342,17 @@ procedure_example_str = '''{
 								"Units":"minutes",
 								"Ingredient":"",
 								"Equipment": "mixer",
-								"scale_target": False
+								"scale_target": false
 							  },
 							  { "Step":"5",
-								"Procedure":"Q.S. to batch quantity \nwith water",
+								"Procedure":"Q.S. to batch quantity with water",
 								"step_type":"ingredient",
 								"Target":"1.0",
 								"Actual":"",
 								"Units":"liters",
 								"Ingredient":"water",
 								"Equipment": "",
-								"scale_target": True
+								"scale_target": true
 							  }		
 	]
 }'''
