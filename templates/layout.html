@@ -1,6 +1,30 @@
 <!doctype html>
-<title>My Application</title>
-{% with messages = get_flashed_messages() %}
+<html>
+  <head>
+    <title>TaKCaMS (Flask)</title>
+    <style>
+      .proc {
+          padding: 5px;
+          background-color: rgb(240, 240, 240);
+          width: 80%;
+          height: 100px;
+          overflow-x: hidden;
+          overflow-y: auto;
+      }
+      .log {
+          padding: 5px;
+          background-color: rgb(240, 240, 240);
+          width: 80%;
+          height: 300px;
+          overflow-x: hidden;
+          overflow-y: auto;
+      }
+
+  </style>
+  </head>
+<body>
+  <p><a href="{{url_for('upload')}}">Uploads</a> | <a href="{{url_for('clear_log')}}">Clear Log</a> | <a href="{{url_for('index')}}">Query</a> | <a href="{{url_for('index')}}">Schema</a> | <a href="{{url_for('clear_files')}}">Clear Files</a></p> 
+  {% with messages = get_flashed_messages() %}
   {% if messages %}
     <ul class=flashes>
     {% for message in messages %}
@@ -9,4 +33,7 @@
     </ul>
   {% endif %}
 {% endwith %}
-{% block body %}{% endblock %}
+{% block body %}
+{% endblock %}
+</body>
+</html>

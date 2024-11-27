@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<h2>Upload Context Files</h2>
+<!--upload form--->
+<form method=post enctype="multipart/form-data" action="{{ url_for('upload') }}">
+    <table>
+        {{ form.hidden_tag() }}
+        {% for field in form %}
+            {% if field.widget.input_type != 'hidden' %}
+            <tr>
+            <td> 
+                {{ field.label }} 
+                </td><td>{{ field }}</td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+    <p><input type=submit value='Upload'></form></p>
+    
+    {% if contexts %}
+    <p>
+        <h2>
+            Contexts   
+        </h2>
+        <table border='1'>
+            <tr><td>TYPE</td><td>NAME</td></tr>
+        {% for c in contexts %}
+            <tr><td>{{c.ftype}}</td><td>{{c.name}}</td></tr>
+        {% endfor %}
+        </table>
+    </p>
+    {% endif %}
+
+
+{% endblock %}

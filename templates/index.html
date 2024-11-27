@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+<h1>TaKCaMS (Flask)</h1>
+
+<div class="proc">
+    <table border="1">
+        <tr><td>Step</td><td>Procedure</td><td>Amount</td></tr>
+        {% for l in proc %}
+        <tr>
+            <td>{{l.Step}}</td> 
+        <td>{{l.Procedure}}</td> 
+        <td>{{l.Target}} {{l.Units}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+{% if contexts %}
+    
+<form method=post enctype="multipart/form-data" action="{{url_for('index')}}">
+    <table>
+        {{ form.hidden_tag() }}
+        {% for field in form %}
+            {% if field.widget.input_type != 'hidden' %}
+            <tr>
+            <td> 
+                {{ field.label }} 
+                </td><td>{{ field }}</td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+    <p><input type=submit value='Submit'></form></p>
+    {% for a in answers %}
+      <p>
+        Question: {{a.question}}<br/>
+        Step: {{a.for_step}}<br/>
+        Answer: <em>{% if(a.verified) %}verified {% else %}unverified {% endif %} from: {{a.dbname}} ({{a.ftype}})</em><br/>
+        {{a.answer}}<br/>
+        
+      </p>
+    {% endfor %}
+
+    {% if systemtip %}
+    <p>System tip for step {{systemtip.step}} was {{systemtip.tip}}</p>
+    {% endif %}
+
+    {% if usertip %}
+    <p>Your tip for step {{systemtip.step}} was {{usertip.conflicts}}</p>
+    {% endif %}
+
+    {% if log %}
+    <hr/>
+    <div class="log">
+    <ul>
+        {% for l in log %}
+        <li>[{{l.when}}]<br/> 
+        Q:{{l.question}}<br/>
+        A:{{l.answer}}</li>
+        {% endfor %}
+    </ul>
+    </div>
+    {% endif %}
+
+{% else %}
+    <p>Upload at least one pre-existing knowledge document to begin.</p>
+{% endif %}
+
+{% endblock %}

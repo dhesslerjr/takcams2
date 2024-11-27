@@ -148,19 +148,20 @@ class PythiaAILab:
         }
 
 ###FILES - raminderpal###
-    def create_databases(self, file_paths, extra_dbs):
+    def create_databases(self, file_paths, extra_dbs, user_Profile):
         if not file_paths:
-            raise ValueError("At least one SOP file is required.")
+            raise ValueError("At least one pre-existing knowledge file is required.")
 
-        st.info("Creating PRIMARY_SOP database...")
+        st.info("Creating primary pre-existing database...")
         self.primary_sop = self.process_sop(file_paths[0])
         
         if len(file_paths) > 1:
-            st.info("Processing additional SOP documents...")
+            st.info("Processing additional pre-existing documents...")
             for path in file_paths[1:]:
                 self.additional_sops.append(self.process_sop(path))
         
-        for db_name, db_path in extra_dbs.items():
+        for db_path in extra_dbs:
+            db_name = os.path.basename(db_path)
             st.info(f"Creating {db_name} database...")
             self.additional_databases[db_name] = self.process_extra_database(db_name, db_path)
             
@@ -170,7 +171,7 @@ class PythiaAILab:
         with open(file_path, 'r', encoding='utf-8') as file:
             content = file.read()
         db = TextDatabase(content)
-        st.success(f"Processed SOP: {Path(file_path).name}")
+        st.success(f"Processed pre-existing: {Path(file_path).name}")
         return db
 
             
@@ -342,47 +343,37 @@ def main():
     if not st.session_state.databases_created:
         st.header("Database Creation")
 
+
+        buf = st.text_area("Enter pre-existing knowledge documents by file path (one per line)", help="Required")
+        preexisting = buf.splitlines(False)
+
+
         # Multiple file uploader
-        uploaded_files = st.file_uploader("Upload SOP document(s)", type=['txt', 'pdf'], accept_multiple_files=True)
+        #uploaded_files = st.file_uploader("Upload SOP document(s)", type=['txt', 'pdf'], accept_multiple_files=True)
 
-        if uploaded_files:
-            st.write("Uploaded SOP files:")
-            for file in uploaded_files:
-                st.write(f"- {file.name}")
+        #if uploaded_files:
+        #    st.write("Uploaded SOP files:")
+        #    for file in uploaded_files:
+        #        st.write(f"- {file.name}")
 
-        #extra_databases = st.text_area("Enter additional documents by file path (one per line)", help="Optional")
+        buf = st.text_area("Enter guideline documents by file path (one per line)", help="Optional")
+        guidelines = buf.splitlines(False)
+
         #extra_databases file uploader
-        extra_databases = st.file_uploader("Upload extra database document(s)", type=['txt', 'pdf'], accept_multiple_files=True)
+        #extra_databases = st.file_uploader("Upload extra database document(s)", type=['txt', 'pdf'], accept_multiple_files=True)
 
+        userprofile = st.text_input("Enter user profile document by file path", help="Optional")
 
 
         if st.button("Create Databases"):
  
-            if uploaded_files:
-                if False:
-                    with tempfile.TemporaryDirectory() as temp_dir:
-                        file_paths = []
-                        for file in uploaded_files:
-                            file_path = Path(temp_dir) / file.name
-                            with open(file_path, "wb") as f:
-                                f.write(file.getbuffer())
-                            file_paths.append(str(file_path))
-
-                        extra_dbs = []        
-                        for line in extra_databases.split('\n'):
-                                if ':' in line:
-                                    name, path = line.split(':')
-                                    extra_dbs[name.strip()] = path.strip()
-                        
-                    st.session_state.pythia.create_databases(file_paths, extra_dbs)
-                else:
-                    st.session_state.pythia.create_databases_fromstream(uploaded_files, extra_databases)
-                    
-                
+            
+            if len(guidelines)>0:
+                st.session_state.pythia.create_databases(preexisting,guidelines,userprofile)
                 st.session_state.databases_created = True
                 st.success("Databases created successfully!")
             else:
-                st.error("Please upload at least one SOP file.")
+                st.error("Please upload at least one pre-existing knowledge file.")
 
     if st.session_state.databases_created:
         st.header("Ask Questions")
