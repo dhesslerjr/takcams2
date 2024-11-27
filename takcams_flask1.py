@@ -1,7 +1,7 @@
 from flask import Flask,render_template,request,jsonify
 import os,json,datetime
 from flask_wtf import FlaskForm
-from wtforms import MultipleFileField,FileField,TextAreaField
+from wtforms import MultipleFileField,FileField,TextAreaField,IntegerField
 from wtforms.validators import InputRequired
 from werkzeug.utils import secure_filename
 import takcams_ai
@@ -14,6 +14,8 @@ app = Flask(__name__)
 app.config.from_object(config.Config)
 app.ContextStore = takcams_storage.ContextStore()
 app.session_log = []
+groq_api_key = os.getenv("GROQ_API_KEY")
+app.ai = takcams_ai.TakCamsAI(groq_api_key)
 
 class UploadFileForm(FlaskForm):
     prefiles = FileField('Pre-existing',validators=[InputRequired()])
@@ -21,8 +23,9 @@ class UploadFileForm(FlaskForm):
     userprofile = FileField('User profile',validators=[])
 
 class QueryForm(FlaskForm):
-    question = TextAreaField('Question',validators=[InputRequired()])
-
+    step_no = IntegerField('Step',validators=[InputRequired()])
+    question = TextAreaField('Question',validators=[InputRequired()],render_kw={'class': 'form-control', 'rows': 3, 'cols':40})
+    tip = TextAreaField('Tip (optional)',render_kw={'class': 'form-control', 'rows': 3, 'cols':40})
 @app.route('/clear_files',methods=["GET"])
 def clear_files():
     app.ContextStore.clear()
@@ -37,8 +40,6 @@ def clear_log():
 def upload():
     form = UploadFileForm()
     if form.validate_on_submit():
-        
-        #app.ContextStore.clear()
 
         #prefiles
         pre_filenames = []        
@@ -82,8 +83,6 @@ def upload():
             profile.save(profile_name)
 
 
-        return render_template('upload.html', form=form, contexts=app.ContextStore.contexts)        
-
     return render_template('upload.html', form=form,contexts=app.ContextStore.contexts)
 
 
@@ -92,23 +91,35 @@ def upload():
 def index():
 
     question=""
-    answer=""
+    answers=[]
+    step_no=""
+    system_tip=""
+    tip_response=""
+    proc=json.loads(takcams_schema.procedure_example_str)['procedure']
     form = QueryForm()
     alog=[]
     if form.validate_on_submit():
         question=form.question.data
-        #datetime.datetime.now().strftime("%I:%M%p:%S on %B %d, %Y")
+        step_no=form.step_no.data
+        tip=form.tip.data
         #DEBUG
-        answer='no answer available'
+        app.ai.set_contexts(app.ContextStore.contexts)
+        answers=app.ai.ask_step_question(step_no,question,proc)
+        if tip: 
+            tip_response=app.ai.submit_user_tip(step_no,tip)
+        system_tip=app.ai.get_system_tip(step_no)
+
         item = { 'when': datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y"),
-                'question': question, 'answer':answer}
+                'question': question, 'answer':answers}
         app.session_log.append(item)
         print(item)
         alog= app.session_log.copy()
         alog.reverse()
 
 
-    return render_template('index.html', form=form,contexts=len(app.ContextStore.contexts),question=question, answer=answer, log=alog)
+    return render_template('index.html', form=form,contexts=len(app.ContextStore.contexts),
+                           question=question, answers=answers, log=alog,
+                           step=step_no, proc=proc, usertip=tip_response,systemtip=system_tip)
 
 @app.route('/schema_test',methods=["GET"])
 def schema_test():

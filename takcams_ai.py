@@ -44,9 +44,11 @@ class TakCamsAI:
         }
 
     def set_contexts(self,contexts_array):            
-        self.contexts=[]
+        #ref
+        #self.contexts=contexts_array
+        #shallow copy
         for c in contexts_array:
-             self.contexts.append(c)
+            self.contexts.append(c)
 
     
     def get_hint(self):
@@ -67,6 +69,21 @@ class TakCamsAI:
                 answer=response.choices[0].message.content.strip()
         return answer
 
+    def submit_user_tip(self,step_no,tip):
+            return {'step': step_no, 'tip': tip, 'conflicts':['conflict 1','conflict 2']}
+    
+    def get_system_tip(self,step_no):
+            return {'step': step_no, 'tip': 'a system tip here'}
+
+    def ask_step_question(self,step,question,procedure):
+        # for testing: using the generic question function (we need a step-specific prompt)
+        responses=self.ask_question(question)
+        # for testing: need to add the stuff the generic function doesn't respond with
+        for r in responses:
+             r['for_step']=step
+             r['question']=question
+
+        return responses 
 
     def ask_question(self, question):
             """
