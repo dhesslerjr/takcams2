@@ -9,6 +9,8 @@ import takcams_storage
 from dotenv import load_dotenv
 import config
 import takcams_schema
+from flask import session
+from datetime import timedelta
 
 app = Flask(__name__)
 app.config.from_object(config.Config)
@@ -89,6 +91,9 @@ def upload():
 @app.route('/',methods=["GET"])
 @app.route('/query',methods=["GET","POST"])
 def index():
+
+    session.permanent = True
+    app.permanent_session_lifetime = timedelta(minutes=30)
 
     question=""
     answers=[]
